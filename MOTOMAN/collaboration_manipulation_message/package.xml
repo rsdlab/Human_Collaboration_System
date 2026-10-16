@@ -1,21 +1,35 @@
 <?xml version="1.0"?>
 <package format="3">
   <name>collaboration_manipulation_message</name>
-  <version>0.0.0</version>
-  <description>Message definitions for the MOTOMAN human collaboration system.</description>
+  <version>0.1.0</version>
+  <description>This package is licensed under the MIT License.</description>
 
-  <maintainer email="rsdlab@todo.todo">rsdlab</maintainer>
+  <maintainer email="rsdlab@example.com">rsdlab</maintainer>
   <license>MIT</license>
+  
+  <member_of_group>rosidl_interface_packages</member_of_group>
 
+  <!-- Build tool -->
   <buildtool_depend>ament_cmake</buildtool_depend>
 
+  <!-- Build dependencies -->
+  <build_depend>action_msgs</build_depend>
+  <build_depend>std_msgs</build_depend>
   <build_depend>rosidl_default_generators</build_depend>
 
-  <depend>geometry_msgs</depend>
+  <!-- Export dependencies -->
+  <build_export_depend>action_msgs</build_export_depend>
+  <build_export_depend>std_msgs</build_export_depend>
 
+  <!-- Execution dependencies -->
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>action_msgs</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
   <exec_depend>rosidl_default_runtime</exec_depend>
 
-  <member_of_group>rosidl_interface_packages</member_of_group>
+  <!-- Optional test dependencies -->
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
 
   <export>
     <build_type>ament_cmake</build_type>

@@ -1,19 +1,36 @@
 <?xml version="1.0"?>
-<package format="2">
+<package format="3">
   <name>task_status_monitor_system</name>
   <version>0.0.0</version>
   <description>This package is licensed under the MIT License.</description>
-  <maintainer email="yamamoto@rsdlab.jp">Yukiya Yamamto</maintainer>
-  <author email="yamamoto@rsdlab.jp">Yukiya Yamamto</author>
+
+  <maintainer email="rsdlab@todo.todo">rsdlab</maintainer>
   <license>MIT</license>
 
-  <buildtool_depend>catkin</buildtool_depend>
+  <!-- Build tool -->
+  <buildtool_depend>ament_python</buildtool_depend>
 
-  <depend>geometry_msgs</depend>
-  <depend>std_msgs</depend>
-
-  <build_depend>message_generation</build_depend>
+  <!-- Build dependencies -->
+  <build_depend>action_msgs</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>rosidl_default_generators</build_depend>
   <build_depend>collaboration_manipulation_message</build_depend>
-  <exec_depend>message_runtime</exec_depend>
 
+  <!-- Export dependencies -->
+  <build_export_depend>action_msgs</build_export_depend>
+  <build_export_depend>std_msgs</build_export_depend>
+
+  <!-- Execution dependencies -->
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>action_msgs</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>rosidl_default_runtime</exec_depend>
+
+  <!-- Optional test dependencies -->
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
 </package>

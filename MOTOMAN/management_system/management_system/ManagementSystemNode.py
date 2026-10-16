@@ -19,16 +19,17 @@ from abc import abstractmethod
 import rclpy
 from rclpy.node import Node
 from collaboration_manipulation_message.msg import TargetArea, TaskCommandList, TaskCommand, PlaceAreaCandidatesList
-from collaboration_manipulation_module.srv import SendTaskCommand
-from collaboration_manipulation_module.srv import TerminateSystem
-from management_system.srv import *
+from collaboration_manipulation_message.srv import SendTaskCommand, NotifyTaskStatus, NotifyTaskResult, NotifyTaskCompletion, TerminateSystem
+from collaboration_manipulation_message.srv import TerminateSystem
+
+# from management_system.srv import *
 from std_msgs.msg import Empty
 import sys
 import os
 
 
 # インポート
-from EnumerateModule import EnumCommandReceiveState
+from collaboration_manipulation_module.EnumerateModule import EnumCommandReceiveState
 
 class SystemManagementBase(metaclass=ABCMeta):
     """

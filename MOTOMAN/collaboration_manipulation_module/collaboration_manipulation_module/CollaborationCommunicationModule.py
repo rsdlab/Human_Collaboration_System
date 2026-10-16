@@ -7,18 +7,30 @@ import time
 import rclpy
 import tf2_ros
 from collaboration_manipulation_message.msg import TargetArea, WorkDetectionResultList, MonitoringAreaList, MonitoringArea
-from collaboration_manipulation_module.srv import *
-from peripheral_environment_detection_subsystem.srv import *
-from workpieces_detection_subsystem.srv import *
-from management_system.srv import * 
-from place_position_detection_subsystem.srv import *
-from CollaborationEventModule import CollaborationEventPublisher, CollaborationTaskCommand, CollaborationWorkPresenceArea
-from CollaborationEventModule import CollaborationPlaceAreaCandidatesList, CollaborationCandidatePlaceLocationArea, CollaborationTaskCommandList
-from CollaborationToolModule import CollaborationTool
-from EnumerateModule import EnumEvent
+from collaboration_manipulation_message.srv import (
+    CancelTask,
+    DetectPlacePosition,
+    DetectWorkpieces,
+    FinishTask,
+    GetStatus,
+    NotifyTaskCompletion,
+    NotifyTaskResult,
+    PauseTask,
+    SendTaskCommand,
+    SetMonitoringArea,
+    TerminateSystem,
+)
+# from peripheral_environment_detection_subsystem.srv import *
+# from workpieces_detection_subsystem.srv import *
+# from management_system.srv import * 
+# from place_position_detection_subsystem.srv import *
+from .CollaborationEventModule import CollaborationEventPublisher, CollaborationTaskCommand, CollaborationWorkPresenceArea
+from .CollaborationEventModule import CollaborationPlaceAreaCandidatesList, CollaborationCandidatePlaceLocationArea, CollaborationTaskCommandList
+from .CollaborationToolModule import CollaborationTool
+from .EnumerateModule import EnumEvent
 from std_msgs.msg import Empty, Bool
 from geometry_msgs.msg import Point
-from EnumerateModule import EnumState, EnumCommandReceiveState
+from .EnumerateModule import EnumState, EnumCommandReceiveState
 
 
 # 協働通信クラスの抽象クラス.

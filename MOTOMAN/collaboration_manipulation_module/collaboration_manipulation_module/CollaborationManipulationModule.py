@@ -18,10 +18,10 @@
 #このノードはLinuxでのみ利用可能です．
 #===================================================================================================================#
 
-from CollaborationStateModule import HumanCollaborationStateMachine
-from CollaborationCommunicationModule import TaskCommandServer, TaskCancelServer, TaskFinishServer, GetStatusServer, SystemTerminate, PeripheralEnvironmentAreaSetClient, PlacePositionClient, WorkDetectionClient, NotifyTaskResultClient, NotifyTaskCompleteClient
-from CollaborationEventModule import CollaborationEventPublisher, CollaborationEventSubscriverWorkStart
-from CollaborationToolModule import CollaborationTool
+from .CollaborationStateModule import HumanCollaborationStateMachine
+from .CollaborationCommunicationModule import TaskCommandServer, TaskCancelServer, TaskFinishServer, GetStatusServer, SystemTerminate, PeripheralEnvironmentAreaSetClient, PlacePositionClient, WorkDetectionClient, NotifyTaskResultClient, NotifyTaskCompleteClient
+from .CollaborationEventModule import CollaborationEventPublisher, CollaborationEventSubscriverWorkStart
+from .CollaborationToolModule import CollaborationTool
 
 ##################################################################
 #　　　　　　　　　　　 クラス定義　                            #
@@ -57,9 +57,13 @@ class HumanCollaboration:
 ##################################################################
 #　　　　　　　　　　　 以下実行処理内容                         #
 ##################################################################   
-if __name__ == '__main__':
+def main(args=None):
     hc = HumanCollaboration()
 
     CollaborationTool.start_executor()
 
     hc.execute()
+
+
+if __name__ == '__main__':
+    main()

@@ -23,7 +23,7 @@ from ament_index_python.packages import get_package_share_directory
 from aruco_msgs.msg import MarkerArray
 
 from collaboration_manipulation_message.msg import WorkDetectionResult
-from workpieces_detection_subsystem.srv import DetectWorkpieces
+from collaboration_manipulation_message.srv import DetectWorkpieces
 
 
 class WorkDetect(Node):

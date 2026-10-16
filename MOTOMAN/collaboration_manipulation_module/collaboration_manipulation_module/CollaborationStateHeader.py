@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 # coding: UTF-8
 
-from EnumerateModule import EnumEvent
-from CollaborationCommunicationModule import *
-from CollaborationUserDefineModule import *
-from CollaborationEventModule import CollaborationTaskCommandList
+from .EnumerateModule import EnumEvent
+from .CollaborationCommunicationModule import *
+from .CollaborationUserDefineModule import *
+from .CollaborationEventModule import CollaborationTaskCommandList
 from smach import State
-from TransitionModule import Transition
-from CollaborationToolModule import CollaborationTool
+from .TransitionModule import Transition
+from .CollaborationToolModule import CollaborationTool
 
 #状態遷移イベント抽象クラス.
 class CollaborationState(State):

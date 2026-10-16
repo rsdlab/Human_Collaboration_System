@@ -2,9 +2,9 @@
 # coding: UTF-8
 from abc import ABCMeta
 from abc import abstractmethod
-from EnumerateModule import EnumEvent
+from .EnumerateModule import EnumEvent
 from collaboration_manipulation_message.msg import TargetArea, PlaceAreaCandidatesList, TaskCommand, TaskCommandList
-from collaboration_manipulation_module.srv import * 
+from collaboration_manipulation_message.srv import * 
 import queue
 import threading
 

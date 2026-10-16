@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # coding: UTF-8
 
-from EnumerateModule import EnumEvent, EnumState
-from CollaborationToolModule import CollaborationTool
+from .EnumerateModule import EnumEvent, EnumState
+from .CollaborationToolModule import CollaborationTool
 
 class _StateAndEvent:
     """

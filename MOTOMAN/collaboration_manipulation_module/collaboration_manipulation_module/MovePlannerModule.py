@@ -20,7 +20,7 @@ from moveit_msgs.msg import (
     OrientationConstraint,
 )
 
-from CollaborationToolModule import CollaborationTool
+from .CollaborationToolModule import CollaborationTool
 
 
 # === MoveIt2 settings ===

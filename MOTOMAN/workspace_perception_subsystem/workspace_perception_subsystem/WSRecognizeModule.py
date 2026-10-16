@@ -14,23 +14,37 @@
 #===================================================================================================================#
 
 #python,TFのライブラリを使用
-import rospy
-from rospy.topics import Publisher, Subscriber
+import rclpy
+from rclpy.node import Node
+import time
+# from rospy.topics import Publisher, Subscriber
 
 from std_msgs.msg import *
 from geometry_msgs.msg import *
 
-def send_ws_recognise():
-    pub = rospy.Publisher('recg_data',Float32 , queue_size=10)
-    rospy.init_node('ws_recognise', anonymous=True)
-    r = rospy.Rate(1) # 1hz
-    while not rospy.is_shutdown():
-        sensor = Float32()
-        sensor.data= 1.0
-        pub.publish(sensor)
-        r.sleep()
+class WorkSpaceRecogniseNode(Node):
+    def __init__(self):
+        super().__init__('ws_recognise')
+        self.pub = self.create_publisher(Float32, 'recg_data', 10)
+
+    def send_ws_recognise(self):
+        rate_hz = 10.0
+        period = 1.0 / rate_hz
+        while rclpy.ok():
+            sensor = Float32()
+            sensor.data = 1.0
+            self.pub.publish(sensor)
+            time.sleep(period)
+
+
+def main():
+    try:
+        rclpy.init()
+        node = WorkSpaceRecogniseNode()
+        node.send_ws_recognise()
+    except Exception as e:
+        pass
+
 
 if __name__ == '__main__':
-    try:
-        send_ws_recognise()
-    except rospy.ROSInterruptException: pass
+    main()
